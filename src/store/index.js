@@ -1,9 +1,10 @@
 // store/index.js
+// store/index.js
 import { createStore } from 'vuex'
 
 const store = createStore({
   state: {
-    currentValue: '10000',
+    currentValue: '0',
     previousValue: null,
     operation: null,
     result: null,
