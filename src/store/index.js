@@ -1,4 +1,5 @@
 // store/index.js
+// store/index.js
 import { createStore } from 'vuex'
 
 const store = createStore({
