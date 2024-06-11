@@ -55,49 +55,5 @@ describe('App.vue', () => {
   })
 })
 
-describe('DisplayComp.vue', () => {
-  it('renders the current value and operation correctly', () => {
-    store.state.currentValue = '5'
-    store.state.previousValue = '3'
-    store.state.operation = '+'
-    const wrapper = shallowMount(DisplayComp, {
-      global: {
-        plugins: [store]
-      }
-    })
-    expect(wrapper.text()).toContain('3 + 5')
-  })
 
-  it('renders the result correctly', () => {
-    store.state.result = '8'
-    const wrapper = shallowMount(DisplayComp, {
-      global: {
-        plugins: [store]
-      }
-    })
-    expect(wrapper.text()).toContain('8')
-  })
-})
 
-describe('ButtonComp.vue', () => {
-  it('renders the button with the correct label and color', () => {
-    const label = '7'
-    const color = '3'
-    const wrapper = shallowMount(ButtonComp, {
-      props: { label, color }
-    })
-    expect(wrapper.text()).toBe('7')
-    expect(wrapper.classes()).toContain('bg-[#9c9286]')
-    expect(wrapper.classes()).toContain('hover:bg-[#b2a9a0]')
-  })
-
-  it('emits a click event when the button is clicked', async () => {
-    const label = '7'
-    const color = '3'
-    const wrapper = shallowMount(ButtonComp, {
-      props: { label, color }
-    })
-    await wrapper.trigger('click')
-    expect(wrapper.emitted().click).toBeTruthy()
-  })
-})

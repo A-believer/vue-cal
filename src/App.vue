@@ -25,7 +25,7 @@
 
         <button-comp color="3" label="0" @click="handleInput('0')"></button-comp>
         <button-comp color="3" label="•" @click="handleDecimal"></button-comp>
-        <button-comp color="2" label="=" @click="handleEquals" @keypress="enter"></button-comp>
+        <button-comp color="2" label="=" @click="handleEquals"></button-comp>
       </div>
     </div>
 

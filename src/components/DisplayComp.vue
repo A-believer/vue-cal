@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-	import { computed, watch } from "vue";
+	import { computed } from "vue";
 	import { useStore } from "vuex";
 
 	const store = useStore();
@@ -34,15 +34,5 @@ const displayResult = computed(() => {
     }
     return ''
 })
-
-watch(
-    result,
-    (newResult) => {
-        if (operation.value !== null) {
-        store.dispatch('performOperation')
-        result.value = newResult
-     }
-    }
-)
 </script>
 
